@@ -13,7 +13,7 @@ public class CredentialsService {
 	@Autowired
 	CredentialsDao credDao;
 	
-	CredentialsBean credentialsBean;
+	CredentialsBean credentialsBean=new CredentialsBean();
 	
 	
 	public CredentialsService() {
@@ -59,11 +59,27 @@ public class CredentialsService {
 		boolean result=	authenticate(credential);
 				if(result) {
 					changeLoginStatus(credential, 1);
+					credential.setPassword(null);
 					return credential;
 					}
 				else
 					return null;
 				}
+	
+	public CredentialsBean forgotPassword(CredentialsBean credentials) {
+		credentialsBean = credDao.getOne(credentials.getUserID());
+		if(credentialsBean.getAuthQuestion().equals(credentials.getAuthQuestion()) && credentialsBean.getAuthAnswer().equals(credentials.getAuthAnswer())) {
+			credentialsBean.setPassword(credentials.getPassword());
+			credDao.saveAndFlush(credentialsBean);
+			credentialsBean.setPassword(null);
+			credentialsBean.setAuthQuestion(null);
+			credentialsBean.setAuthAnswer(null);
+			return credentialsBean;
+		}
+		else
+			return null;
+		
+		}
 
 
 

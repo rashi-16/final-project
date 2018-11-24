@@ -32,12 +32,8 @@ public class ProfileBean {
 	private LocalDate dateOfBirth;
 	@Column(name="GENDER")
 	private String gender;
-	@Column(name="STREET")
-	private String street;
-	@Column(name="LOCATION")
-	private String location;
-	@Column(name="CITY")
-	private String city;
+	@Column(name="COUNTRY")
+	private String country;
 	@Column(name="STATE")
 	private String state;
 	@Column(name="PINCODE")
@@ -48,7 +44,10 @@ public class ProfileBean {
 	private String emailID;
 	@Column(name="PASSWORD")
 	private String password;
-	
+	@Column(name="AuthQuestion")
+	private String authQuestion;
+	@Column(name="AuthAnswer")
+	private String authAnswer;
 	
 	
 	
@@ -67,13 +66,6 @@ public class ProfileBean {
 	 * @param userId
 	 * @param firstName
 	 * @param lastName
-	 * @param dateOfBirth
-	 * @param gender
-	 * @param street
-	 * @param location
-	 * @param city
-	 * @param state
-	 * @param pincode
 	 * @param mobileNo
 	 * @param emailID
 	 * @param password
@@ -119,23 +111,12 @@ public class ProfileBean {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getStreet() {
-		return street;
+	
+	public String getCountry() {
+		return country;
 	}
-	public void setStreet(String street) {
-		this.street = street;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	public String getState() {
 		return state;
@@ -158,6 +139,22 @@ public class ProfileBean {
 	public String getEmailID() {
 		return emailID;
 	}
+	public String getAuthQuestion() {
+		return authQuestion;
+	}
+
+	public void setAuthQuestion(String authQuestion) {
+		this.authQuestion = authQuestion;
+	}
+
+	public String getAuthAnswer() {
+		return authAnswer;
+	}
+
+	public void setAuthAnswer(String authAnswer) {
+		this.authAnswer = authAnswer;
+	}
+
 	public void setEmailID(String emailID) {
 		this.emailID = emailID;
 	}

@@ -30,13 +30,27 @@ public class CredentialsController {
 
 	@PostMapping("/login")
 	public CredentialsBean login(@RequestBody CredentialsBean credentialsBean) {
-		return credService.login(credentialsBean);
-		
+		try{
+			return credService.login(credentialsBean);
+		}
+		catch(Exception e) {
+			return null;
+		}
 	}
 	
 	@GetMapping("/{userId}")
 	public boolean logout(@PathVariable String userId) {
 		return credService.logout(userId);
+	}
+	
+	@PostMapping("/forgotPassword")
+	public CredentialsBean forgotPassword(@RequestBody CredentialsBean credentialsBean) {
+		try {
+		return credService.forgotPassword(credentialsBean);
+		}
+		catch(Exception e) {
+			return null;
+		}
 	}
 	
 	

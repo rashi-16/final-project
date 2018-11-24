@@ -24,7 +24,10 @@ public class CredentialsBean {
 	private String password;
 	@Column(name="loginstatus")
 	private int loginStatus;
-	
+	@Column(name="AuthQuestion")
+	private String authQuestion;
+	@Column(name="AuthAnswer")
+	private String authAnswer;
 	
 	
 	public CredentialsBean() {
@@ -45,6 +48,32 @@ public class CredentialsBean {
 		this.loginStatus = loginStatus;
 	}
 
+	
+	public String getAuthQuestion() {
+		return authQuestion;
+	}
+
+
+
+	public void setAuthQuestion(String authQuestion) {
+		this.authQuestion = authQuestion;
+	}
+
+
+
+	public String getAuthAnswer() {
+		return authAnswer;
+	}
+
+
+
+	public void setAuthAnswer(String authAnswer) {
+		this.authAnswer = authAnswer;
+	}
+
+
+
+	
 
 	public String getUserID() {
 		return userID;
@@ -75,13 +104,4 @@ public class CredentialsBean {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

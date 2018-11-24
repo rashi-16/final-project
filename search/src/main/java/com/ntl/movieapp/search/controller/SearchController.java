@@ -53,8 +53,6 @@ public class SearchController {
 	@GetMapping("search/{list}")
 	public List<Movie> searchFavList(@PathVariable("list") String list){
 
-
-
 	List<Integer> listing=new ArrayList();
 
 	String[] splittedList=list.split(",");

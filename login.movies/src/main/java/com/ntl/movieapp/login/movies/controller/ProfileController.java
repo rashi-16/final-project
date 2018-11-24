@@ -29,5 +29,6 @@ public class ProfileController {
 		return profileService.register(profileBean);
 	}
 	
+	
 
 }
