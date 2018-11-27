@@ -2,13 +2,7 @@ package com.ntl.movieapp.search.model;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
-@Entity
 public class Movie {
 	
 	
@@ -17,25 +11,72 @@ public class Movie {
 		super();
 	}
 
-@Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+ 
  private int movieId;
- 
- 
  private String movieName;
- 
- 
  private String moviePosterUrl;
- 
-    
  private LocalDate movieReleaseDate;
-    
-    private String movieDescription;
+ private String movieDescription;
+ private int movieAgeLimit;
+ 
+ 
+ public int getMovieAgeLimit() {
+	return movieAgeLimit;
+}
+
+
+
+public void setMovieAgeLimit(int movieAgeLimit) {
+	this.movieAgeLimit = movieAgeLimit;
+}
+
+
+
+private String moviecategory;
+ private String movieVideoUrl;
+ private String movieLanguage;
     
 
  
- public Movie(int movieId, @NotNull String movieName, @NotNull String moviePosterUrl,
-		@NotNull LocalDate movieReleaseDate, @NotNull String movieDescription) {
+ public String getMoviecategory() {
+	return moviecategory;
+}
+
+
+
+public void setMoviecategory(String moviecategory) {
+	this.moviecategory = moviecategory;
+}
+
+
+
+public String getMovieVideoUrl() {
+	return movieVideoUrl;
+}
+
+
+
+public void setMovieVideoUrl(String movieVideoUrl) {
+	this.movieVideoUrl = movieVideoUrl;
+}
+
+
+
+public String getMovieLanguage() {
+	return movieLanguage;
+}
+
+
+
+public void setMovieLanguage(String movieLanguage) {
+	this.movieLanguage = movieLanguage;
+}
+
+
+
+public Movie(int movieId,  String movieName,String moviePosterUrl,
+		 LocalDate movieReleaseDate, String movieDescription) {
 	super();
 	this.movieId = movieId;
 	this.movieName = movieName;

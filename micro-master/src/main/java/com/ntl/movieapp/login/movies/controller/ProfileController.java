@@ -1,7 +1,6 @@
 package com.ntl.movieapp.login.movies.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ntl.movieapp.login.movies.model.ProfileBean;
 import com.ntl.movieapp.login.movies.service.ProfileService;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
 @RestController
 public class ProfileController {
 	
@@ -27,7 +26,6 @@ public class ProfileController {
 	
 	@PostMapping("/register")
 	public ProfileBean register(@RequestBody ProfileBean profileBean) {
-		System.out.println("Data Called");
 		return profileService.register(profileBean);
 	}
 	

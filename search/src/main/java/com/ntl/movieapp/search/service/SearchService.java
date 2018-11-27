@@ -31,18 +31,7 @@ public class SearchService {
 		this.dao=dao;
 	}
 	
-	public List<Movie> allMoviesByTitle(String movieName){
-		
-		return dao.findMovies(movieName);
-	}
 	
-	public List<Movie> allMoviesById(List<Integer> listOfId){
 		
-		
-			return dao.findAllById(listOfId);
-		
-		
-		
-	}
 	
 }

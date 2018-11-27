@@ -32,7 +32,8 @@ public class ProfileBean {
 	private LocalDate dateOfBirth;
 	@Column(name="GENDER")
 	private String gender;
-	
+	@Column(name="COUNTRY")
+	private String country;
 	@Column(name="STATE")
 	private String state;
 	@Column(name="PINCODE")
@@ -111,7 +112,12 @@ public class ProfileBean {
 		this.gender = gender;
 	}
 	
-	
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	public String getState() {
 		return state;
 	}

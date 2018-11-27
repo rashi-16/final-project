@@ -16,13 +16,7 @@ import com.ntl.movieapp.search.model.Movie;
 @Repository
 public interface SearchDao extends JpaRepository<Movie, Integer>{
 
-	public Optional<Movie> findByMovieName(String movieName);
 	
-	
-	 @Transactional
-	 @Modifying
-	 @Query(value = "select * from movie  where movie_name like %?%", 
-	   nativeQuery = true)
-	 public List<Movie> findMovies(String movieName);
+	 
 	
 }

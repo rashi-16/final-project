@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ntl.movieapp.search.model.Movie;
+import com.ntl.movieapp.search.proxy.SearchMoviesProxy;
 import com.ntl.movieapp.search.service.SearchService;
 
 
@@ -24,6 +25,9 @@ public class SearchController {
 	@Autowired
 	SearchService service;
 	
+	
+	@Autowired
+	SearchMoviesProxy searchProxy;
 
 
 	public SearchController() {
@@ -39,38 +43,30 @@ public class SearchController {
 
 
 
-	@GetMapping("/searchs/{title}")
-	public List<Movie> searchList(@PathVariable("title") String title){
+	@GetMapping("/searches/title/{title}")
+	public List<Movie> searchListTitle(@PathVariable("title") String title){
 
-		return service.allMoviesByTitle(title);
+		return searchProxy.searchMoviesByTitle(title);
 		
 		
 	}
 	
-	
-	
+	@GetMapping("/searches/category/{category}")
+	public List<Movie> searchListCategory(@PathVariable("category") String category){
+
+		return searchProxy.searchMoviesByCategory(category);
 		
-	@GetMapping("search/{list}")
-	public List<Movie> searchFavList(@PathVariable("list") String list){
-
-	List<Integer> listing=new ArrayList();
-
-	String[] splittedList=list.split(",");
-	for(int u=0;u<splittedList.length;u++)
-	{
-	listing.add(Integer.parseInt(splittedList[u])); 
+		
 	}
-
-	List<Movie> listOfMovie;
-
-	listOfMovie= service.allMoviesById(listing);
-
 	
+	@GetMapping("/searches/language/{language}")
+	public List<Movie> searchListLanguage(@PathVariable("language") String language){
 
-	return listOfMovie;
-
-
+		return searchProxy.searchMoviesByLanguage(language);
+		
+		
 	}
+	
 
 	
 }
