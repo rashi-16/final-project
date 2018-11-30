@@ -43,11 +43,12 @@ public class FavService {
 		 
 		return listOfId;
 	}
+	public int favouriteDelete(int movieid) {
+		return dao.deleteByMovieId(movieid,"1");
+	}
 
-	public Favourites favouriteListAddition(int movieid) {
-		Favourites fav=new Favourites(movieid,"Yt9876");
-		dao.save(fav);
-		return fav;
+	public Favourites favouriteListAddition(Favourites favMovie) {
+		return dao.save(favMovie);
 	}
 	
 }

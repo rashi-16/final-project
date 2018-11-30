@@ -19,7 +19,9 @@ public class Movie {
  private LocalDate movieReleaseDate;
  private String movieDescription;
  private int movieAgeLimit;
- 
+ private String moviecategory;
+ private String movieVideoUrl;
+ private String movieLanguage;
  
  public int getMovieAgeLimit() {
 	return movieAgeLimit;
@@ -33,9 +35,7 @@ public void setMovieAgeLimit(int movieAgeLimit) {
 
 
 
-private String moviecategory;
- private String movieVideoUrl;
- private String movieLanguage;
+
     
 
  

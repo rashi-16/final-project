@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,31 +18,104 @@ public class Favourites {
 
 
 	@Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private int favouriteId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int favouriteId;
 	 	
 	private int movieId;
 	
 	private String userId;
 	
+	@Transient
 	private String movieName;
+	
+	@Transient
 	private String moviePosterUrl;
+	@Transient
 	private String movieReleaseDate;
+	@Transient
+	private int movieAgeLimit;
+	
+	@Transient
+	 private String moviecategory;
+	@Transient
+	 private String movieVideoUrl;
+	@Transient
+	 private String movieLanguage;
 	
 
 	
 	
 	
 
-	public Favourites(int favouriteId,int movieId,String userId, String movieName,
-			String moviePosterUrl, String movieReleaseDate) {
+	public int getMovieAgeLimit() {
+		return movieAgeLimit;
+	}
+
+
+
+
+
+	public void setMovieAgeLimit(int movieAgeLimit) {
+		this.movieAgeLimit = movieAgeLimit;
+	}
+
+
+
+
+
+	public String getMoviecategory() {
+		return moviecategory;
+	}
+
+
+
+
+
+	public void setMoviecategory(String moviecategory) {
+		this.moviecategory = moviecategory;
+	}
+
+
+
+
+
+	public String getMovieVideoUrl() {
+		return movieVideoUrl;
+	}
+
+
+
+
+
+	public void setMovieVideoUrl(String movieVideoUrl) {
+		this.movieVideoUrl = movieVideoUrl;
+	}
+
+
+
+
+
+	public String getMovieLanguage() {
+		return movieLanguage;
+	}
+
+
+
+
+
+	public void setMovieLanguage(String movieLanguage) {
+		this.movieLanguage = movieLanguage;
+	}
+
+
+
+
+
+	public Favourites(int favouriteId,int movieId,String userId) {
 		super();
 		this.favouriteId = favouriteId;
 		this.movieId = movieId;
 		this.userId = userId;
-		this.movieName = movieName;
-		this.moviePosterUrl = moviePosterUrl;
-		this.movieReleaseDate = movieReleaseDate;
 	}
 
 

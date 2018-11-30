@@ -14,7 +14,7 @@ import com.ntl.movieapp.favourite.movies.model.Favourites;
 public interface FavListServiceProxy {
 
 	
-	@GetMapping("/search-movies/searches/{list}")
+	@GetMapping("/administrator/search/{list}")
 	public List<Favourites> searchFavList
 	(@PathVariable("list") String list);
 	
